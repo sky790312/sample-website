@@ -1,8 +1,12 @@
 <template>
   <div id="m-header">
     <div class="main-wrapper">
-      <logo class="logo"></logo>
-      <h1 class="main-title">{{ currentPage }}</h1>
+      <span class="logo">
+        logo
+      </span>
+      <h1 class="main-title">
+        {{ currentPage }}
+      </h1>
       <i class="fa fa-2x fa-bars"></i>
     </div>
     <div class="search-wrapper">
@@ -17,14 +21,12 @@
 
 <script>
 
-const Logo = () => import('@/components/Logo')
 const ISearch = () => import('@/components/ISearch')
 
 export default {
   name: 'MHeader',
 
   components: {
-    Logo,
     ISearch
   },
 
@@ -56,6 +58,13 @@ export default {
   }
 
   .logo {
+    @extends .flex-center
+    color: $black
+    background-color: $white
+    border-radius: 50%
+    border: 1px solid $light-gray
+    width: 50px
+    height: 50px
     margin-left: 18px
   }
 

@@ -36,7 +36,7 @@ export default {
 .card {
   display: flex
   padding: 8px 10px 10px 10px
-  border: 1px solid $dark-gray
+  border: 1px solid $light-gray
 
   @media screen and (min-width: $mobile-break-point) {
     display: block

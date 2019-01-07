@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 axios.defaults.timeout = 20000
-axios.defaults.baseURL = './'
-
+axios.defaults.baseURL = process.env.BASE_URL
 axios.interceptors.request.use(
   config => {
     config.data = JSON.stringify(config.data)
@@ -31,6 +30,8 @@ axios.interceptors.response.use(
 )
 
 export const get = (url, params = {}) => {
+  console.log('url: ', url)
+  console.log('params: ', params)
   return new Promise((resolve, reject) => {
     axios
       .get(url, {

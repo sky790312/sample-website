@@ -43,8 +43,8 @@ export default {
   color: $green
   margin-top: 75px
   padding: 25px 20px 25px 36px
-  border-top: 1px solid $dark-gray
-  border-bottom: 1px solid $dark-gray
+  border-top: 1px solid $light-gray
+  border-bottom: 1px solid $light-gray
 
   @media screen and (min-width: $mobile-break-point) {
     justify-content space-between

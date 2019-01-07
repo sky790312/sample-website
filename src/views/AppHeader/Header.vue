@@ -1,10 +1,8 @@
 <template>
   <div id="header">
-    <logo
-      class="logo"
-      :width="logo.width"
-      :height="logo.height">
-    </logo>
+    <span class="logo">
+      logo
+    </span>
     <div class="main-menu-wrapper">
       <nav class="page-tabs-wrapper">
         <ul class="page-tabs">
@@ -33,24 +31,18 @@
 
 import { PAGES } from '@/constants'
 
-const Logo = () => import('@/components/Logo')
 const ISearch = () => import('@/components/ISearch')
 
 export default {
   name: 'Header',
 
   components: {
-    Logo,
     ISearch
   },
 
   data () {
     return {
       searchValue: '',
-      logo: {
-        width: '120px',
-        height: '120px'
-      },
       pageTabs: PAGES
     }
   }
@@ -69,7 +61,12 @@ export default {
   }
 
   .logo {
+    @extends .flex-center
     flex: 0 0 120px
+    color: $black
+    background-color: $white
+    border-radius: 50%
+    border: 1px solid $light-gray
     width: 120px
     height: 120px
   }
@@ -110,7 +107,7 @@ export default {
   }
 
   .search {
-    width: 280px
+    width: 240px
     margin: 0 15px
 
     >>> .search-container {

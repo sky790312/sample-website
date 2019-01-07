@@ -28,10 +28,10 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  margin: 0 20px
 
   @media screen and (min-width: $mobile-break-point) {
     max-width: 990px
+    padding: 0 20px
     margin: auto
   }
 }

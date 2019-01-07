@@ -1,0 +1,8 @@
+{
+  "news": [{
+    "title": "new 1",
+    "imageUrl": "./assets/no-image.png",
+    "desc": "asd",
+    "updateAt": "xxx"
+  }]
+}

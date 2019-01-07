@@ -1,11 +1,7 @@
 <template>
   <div id="m-header">
     <div class="main-wrapper">
-      <logo
-        class="logo"
-        :width="logo.width"
-        :height="logo.height">
-      </logo>
+      <logo class="logo"></logo>
       <h1 class="main-title">{{ currentPage }}</h1>
       <i class="fa fa-2x fa-bars"></i>
     </div>
@@ -34,11 +30,7 @@ export default {
 
   data () {
     return {
-      searchValue: '',
-      logo: {
-        width: '50px',
-        height: '50px'
-      }
+      searchValue: ''
     }
   },
 

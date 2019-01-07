@@ -70,6 +70,8 @@ export default {
 
   .logo {
     flex: 0 0 120px
+    width: 120px
+    height: 120px
   }
 
   .main-menu-wrapper {

@@ -1,4 +1,5 @@
-# style.me-test
+# sample website
+Use vue cli 3 eyesystem to build a sample website. Configure all in this mini project including api(fake json), vue-route, vuex, stylus setting, project setting, unit test(jest), e2e test(cypress).
 
 ## Project setup
 ```

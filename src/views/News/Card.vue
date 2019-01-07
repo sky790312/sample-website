@@ -50,7 +50,7 @@ export default {
 
   computed: {
     updatedAtTime () {
-      return new Date(parseInt(this.updatedAt), 10).toLocaleDateString()
+      return new Date(parseInt(this.updatedAt, 10)).toLocaleDateString()
     }
   }
 }

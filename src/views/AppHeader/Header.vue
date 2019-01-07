@@ -9,7 +9,7 @@
           <li
             v-for="tab in pageTabs"
             :key="tab.name"
-            class="page-tab">
+            :class="['page-tab', tab.name]">
             <router-link
               class="router-link"
               :to="tab.routeConfig">

@@ -5,7 +5,7 @@
         <li
           v-for="tab in pages"
           :key="tab.name"
-          class="page">
+          :class="['page', tab.name]">
           <router-link
             class="router-link"
             :to="tab.routeConfig">
@@ -15,7 +15,7 @@
       </ul>
     </nav>
     <div class="copy-right">
-      Copy right @
+      Copy right @ AMPOS
     </div>
   </div>
 </template>

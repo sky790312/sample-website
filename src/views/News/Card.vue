@@ -1,26 +1,22 @@
 <template>
   <div class="card">
     <h3 class="card-title hide-mobile">
-      title
+      {{ title }}
     </h3>
     <div class="card-left-wrapper">
       <img
         class="card-img"
-        src="../../assets/no-image.png">
+        :src="imageUrl">
     </div>
     <div class="card-right-wrapper">
       <h3 class="card-title hide-pc">
-        title
+        {{ title }}
       </h3>
       <p class="card-desc">
-        samkldsamkd samkldsmakdmsal kmdsaklkalsdlsa mkldsamlkdm saldmlksa sadkm
-        samkldsamkd samkldsmakdmsal kmdsaklkalsdlsa mkldsamlkdm saldmlksa sadkm
-        samkldsamkd samkldsmakdmsal kmdsaklkalsdlsa mkldsamlkdm saldmlksa sadkm
-        samkldsamkd samkldsmakdmsal kmdsaklkalsdlsa mkldsamlkdm saldmlksa sadkm
-        samkldsamkd samkldsmakdmsal kmdsaklkalsdlsa mkldsamlkdm saldmlksa sadkm
+        {{ desc }}
       </p>
       <div class="card-time">
-        update: 2017/12/12
+        Updated: {{ updatedAtTime }}
       </div>
     </div>
   </div>
@@ -28,7 +24,35 @@
 
 <script>
 export default {
-  name: 'Card'
+  name: 'Card',
+
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+
+    desc: {
+      type: String,
+      default: ''
+    },
+
+    imageUrl: {
+      type: String,
+      default: ''
+    },
+
+    updatedAt: {
+      type: String,
+      default: ''
+    }
+  },
+
+  computed: {
+    updatedAtTime () {
+      return new Date(parseInt(this.updatedAt), 10).toLocaleDateString()
+    }
+  }
 }
 </script>
 

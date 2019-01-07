@@ -6,16 +6,16 @@
           v-for="tab in pages"
           :key="tab.name"
           class="page">
-          <!-- <router-link
+          <router-link
+            class="router-link"
             :to="tab.routeConfig">
             {{ tab.name }}
-          </router-link> -->
-          {{ tab.name }}
+          </router-link>
         </li>
       </ul>
     </nav>
     <div class="copy-right">
-      Copy right @ AMPOS
+      Copy right @
     </div>
   </div>
 </template>
@@ -72,6 +72,10 @@ export default {
 
   .copy-right {
     color: $dark-gray
+  }
+
+  .router-link {
+    color: $green
   }
 }
 </style>

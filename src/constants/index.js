@@ -1,4 +1,3 @@
-export const EACH_FETCH_NEWS = 15
 export const PAGES = [{
   name: 'News',
   routeConfig: {

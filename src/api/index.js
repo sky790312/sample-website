@@ -35,7 +35,7 @@ export const get = (url, params = {}) => {
   return new Promise((resolve, reject) => {
     axios
       .get(url, {
-        params: params
+        params
       })
       .then(response => {
         resolve(response.data)

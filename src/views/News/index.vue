@@ -1,11 +1,18 @@
 <template>
   <div id="news">
-    <card class="item"></card>
-    <card class="item"></card>
-    <card class="item"></card>
+    <card
+      v-for="newItem in filterBy(news, sort, filter)"
+      :key="newItem.name"
+      class="item"
+      :title="newItem.title"
+      :desc="newItem.desc"
+      :imageUrl="newItem.imageUrl"
+      :updatedAt="newItem.updatedAt">
+    </card>
     <button
+      v-if="shouldShowLoadMore"
       class="load-more"
-      @click="fetchNews">
+      @click="handleFetchNews">
       Load More
     </button>
   </div>
@@ -22,16 +29,58 @@ export default {
     Card
   },
 
+  data () {
+    return {
+      isLoading: false
+    }
+  },
+
   computed: {
     ...mapGetters([
+      'searchNewValue',
+      'totalPage',
+      'currentPage',
       'news'
-    ])
+    ]),
+
+    shouldShowLoadMore () {
+      return this.totalPage > this.currentPage
+    },
+
+    sort () {
+      return {
+        key: 'title',
+        order: 'title'
+      }
+    },
+
+    filter () {
+      return {
+        keys: ['title', 'desc'],
+        value: this.searchNewValue
+      }
+    }
   },
 
   methods: {
     ...mapActions([
       'fetchNews'
-    ])
+    ]),
+
+    handleFetchNews () {
+      this.isLoading = false
+      this.fetchNews()
+        .then(() => {
+          this.isLoading = true
+        })
+        .catch(() => {
+          this.isLoading = true
+        })
+    }
+  },
+
+  mounted () {
+    this.handleFetchNews()
   }
 }
 </script>

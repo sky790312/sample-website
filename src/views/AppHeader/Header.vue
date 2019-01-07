@@ -10,18 +10,17 @@
             v-for="tab in pageTabs"
             :key="tab.name"
             class="page-tab">
-            <!-- <router-link
+            <router-link
+              class="router-link"
               :to="tab.routeConfig">
               {{ tab.name }}
-            </router-link> -->
-            {{ tab.name }}
+            </router-link>
           </li>
         </ul>
       </nav>
       <i-search
         class="search"
-        :searchValue="searchValue"
-        @updateSearchValue="searchValue = $event">
+        :searchValue.sync="searchValue">
       </i-search>
     </div>
   </div>
@@ -30,6 +29,7 @@
 <script>
 
 import { PAGES } from '@/constants'
+import { mapGetters, mapActions } from 'vuex'
 
 const ISearch = () => import('@/components/ISearch')
 
@@ -42,9 +42,29 @@ export default {
 
   data () {
     return {
-      searchValue: '',
       pageTabs: PAGES
     }
+  },
+
+  computed: {
+    ...mapGetters([
+      'searchNewValue'
+    ]),
+
+    searchValue: {
+      get () {
+        return this.searchNewValue
+      },
+      set (value) {
+        this.setSearchNewValue(value)
+      }
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'setSearchNewValue'
+    ])
   }
 }
 </script>

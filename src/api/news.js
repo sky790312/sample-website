@@ -1,7 +1,7 @@
 import { get } from '@/api'
 
 export const NewsServer = {
-  get () {
-    return get(`/data.json`)
+  get (payload) {
+    return get(`/data${payload}.json`)
   }
 }

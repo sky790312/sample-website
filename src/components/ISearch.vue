@@ -31,7 +31,7 @@ export default {
 
   methods: {
     updateSearchValue (event) {
-      this.$emit('updateSearchValue', event.target.value)
+      this.$emit('update:searchValue', event.target.value)
     }
   }
 }

@@ -12,8 +12,7 @@
     <div class="search-wrapper">
       <i-search
         class="search"
-        :searchValue="searchValue"
-        @updateSearchValue="searchValue = $event">
+        :searchValue.sync="searchValue">
       </i-search>
     </div>
   </div>
@@ -21,6 +20,7 @@
 
 <script>
 
+import { mapGetters, mapActions } from 'vuex'
 const ISearch = () => import('@/components/ISearch')
 
 export default {
@@ -32,14 +32,32 @@ export default {
 
   data () {
     return {
-      searchValue: ''
     }
   },
 
   computed: {
     currentPage () {
       return this.$route.name
+    },
+
+    ...mapGetters([
+      'searchNewValue'
+    ]),
+
+    searchValue: {
+      get () {
+        return this.searchNewValue
+      },
+      set (value) {
+        this.setSearchNewValue(value)
+      }
     }
+  },
+
+  methods: {
+    ...mapActions([
+      'setSearchNewValue'
+    ])
   }
 }
 </script>

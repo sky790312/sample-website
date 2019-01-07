@@ -15,7 +15,7 @@
       </ul>
     </nav>
     <div class="copy-right">
-      Copy right @ AMPOS
+      Copy right @ KevinHu
     </div>
   </div>
 </template>

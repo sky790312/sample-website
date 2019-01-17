@@ -2,6 +2,9 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/sample-website/'
+    : '/',
   configureWebpack: {
     plugins: [
       new webpack.LoaderOptionsPlugin({

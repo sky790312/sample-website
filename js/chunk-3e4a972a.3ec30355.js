@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-3e4a972a"],{"5c1e":function(e,n,a){},"81a8":function(e,n,a){"use strict";a.r(n);var t=function(){var e=this,n=e.$createElement,a=e._self._c||n;return a("div",{attrs:{id:"video"}},[e._v("\n  video page\n")])},i=[],o={name:"Video"},c=o,u=(a("aa3d"),a("2877")),s=Object(u["a"])(c,t,i,!1,null,"9ba9f080",null);s.options.__file="Video.vue";n["default"]=s.exports},aa3d:function(e,n,a){"use strict";var t=a("5c1e"),i=a.n(t);i.a}}]);
+//# sourceMappingURL=chunk-3e4a972a.3ec30355.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-36b0eff7"],{"0370":function(n,e,t){"use strict";t.r(e);var i=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{attrs:{id:"regions"}},[n._v("\n  regions page\n")])},s=[],o={name:"Regions"},c=o,r=(t("45b6"),t("2877")),u=Object(r["a"])(c,i,s,!1,null,"596b1108",null);u.options.__file="Regions.vue";e["default"]=u.exports},"45b6":function(n,e,t){"use strict";var i=t("bc20"),s=t.n(i);s.a},bc20:function(n,e,t){}}]);
+//# sourceMappingURL=chunk-36b0eff7.d16c8174.js.map
